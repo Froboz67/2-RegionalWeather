@@ -104,7 +104,7 @@ export default {
       }
     },
   },
-  mounted() {
+  created() {
     this.getCity();
     this.getSevenDayForecast();
     this.getCurrentTemperature();
