@@ -33,7 +33,8 @@ export default {
         let dayName = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
         return dayName[day] + ", " + monthName[month] + " " + date + ", " + year;
-    }
+    },
+
 }
 
 

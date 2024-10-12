@@ -5,7 +5,8 @@ export function createStore() {
         state: {
             weatherData: {
                 fairfield: {
-                    stationId: "KHAO",
+                    localSid: "CVGthr",
+                    stationId: "KILN",
                     wfo: "ILN",
                     xCoor: 34,
                     yCoor: 50,
@@ -13,6 +14,7 @@ export function createStore() {
                     latitude: 39.3314
                 },
                 athens: {
+                    localSid: "ATHO1thr",
                     stationId: "KPKB",
                     wfo: "RLX",
                     xCoor: 43,
@@ -21,6 +23,7 @@ export function createStore() {
                     latitude: 39.326
                 },
                 portland: {
+                    localSid: "PDXthr",
                     stationId: "KPDX",
                     wfo: "PQR",
                     xCoor: 115,
@@ -29,6 +32,7 @@ export function createStore() {
                     latitude: 45.5369
                 },
                 tuscon: {
+                    localSid: "TUSthr",
                     stationId: "KTUS",
                     wfo: "TWC",
                     xCoor: 91,
