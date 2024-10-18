@@ -1,6 +1,5 @@
 <template>
   <div>
-    The National Weather Service forecast
     <TheForecast></TheForecast>
   </div>
 </template>
