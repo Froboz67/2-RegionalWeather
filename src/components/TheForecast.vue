@@ -185,6 +185,7 @@ export default {
   top: 0;
   z-index: 100;
   background-color: white;
+  padding-bottom: 1rem;
 }
 .current-city {
   font-size: 24px;
@@ -227,6 +228,18 @@ h2 {
 @media (max-width: 700px) {
   .cards-container {
     grid-template-columns: 1fr;
+  }
+  h1 {
+    font-size: 20px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 16px;
+  }
+  h4 {
+    font-size: 12px;
   }
 }
 </style>
