@@ -7,6 +7,10 @@ This Vue.js application provides a seven-day weather forecast for four U.S. regi
 - **Seven-Day Forecast:** Access regional weather forecasts for four U.S. cities.
 - **Historical Data Integration:** Uses the RCC-ACIS API to showcase daily record high and low temperatures.
 - **Responsive Design:** Incorporates Bootstrap and dynamic queries for optimal viewing on various browser sizes and mobile screens.
+
+## Sample Screenshot
+
+<img src="readme-image.png" alt="sample image" style="width: 60%; max-width: 300px;">
   
 ## Future Enhancements
 
