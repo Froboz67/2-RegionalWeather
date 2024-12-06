@@ -8,6 +8,10 @@
         {{ this.city }}, {{ this.state }} | currently {{ this.temperature }}° F
         | heat index {{ this.heatIndex }}° F
       </p>
+      <p v-if="this.windChill < 32">
+        {{ this.city }}, {{ this.state }} | currently {{ this.temperature }}° F
+        | wind chill {{ this.windChill }}° F
+      </p>
       <p v-else>
         {{ this.city }}, {{ this.state }} | currently {{ this.temperature }}° F
       </p>
@@ -49,6 +53,7 @@ export default {
       state: "",
       temperature: null,
       heatIndex: null,
+      windChill: null,
       getDate() {
         return weatherService.getDate();
       },
@@ -108,6 +113,7 @@ export default {
         weatherService
           .getCurrentWeather(this.currentCityData.stationId)
           .then((response) => {
+            console.log("temp data: ", response);
             this.temperature = (
               (response.data.properties.temperature.value * 9) / 5 +
               32
@@ -116,6 +122,15 @@ export default {
               (response.data.properties.heatIndex.value * 9) / 5 +
               32
             ).toFixed(0);
+            this.windChill = (
+              (response.data.properties.windChill.value * 9) / 5 +
+              32
+            ).toFixed(0);
+            console.log(
+              "raw wind chill value :",
+              response.data.properties.windChill.value
+            );
+            console.log("wind chill: ", this.windChill);
           })
           .catch((error) => {
             console.log("error in getCurrentTemperature", error);
