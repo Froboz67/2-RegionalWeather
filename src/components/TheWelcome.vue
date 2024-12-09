@@ -48,6 +48,17 @@
       >
       for Tuscon, Arizona
     </WelcomeItem>
+    <WelcomeItem>
+      <template #icon>
+        <DocumentationIcon />
+      </template>
+      <template #heading>Bedford Park, Illinois</template>
+      Seven Day Weather Forecast
+      <RouterLink :to="{ name: 'forecast' }" @click="setCity('chicago')"
+        >Forecast</RouterLink
+      >
+      for Bedford Park, Illinois
+    </WelcomeItem>
   </div>
 </template>
 

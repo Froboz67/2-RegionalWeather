@@ -39,6 +39,15 @@ export function createStore() {
                     yCoor: 49,
                     longitude: -110.96912,
                     latitude: 32.195447
+                },
+                chicago: {
+                    localSid: "ORDthr",
+                    stationId: "KLOT",
+                    wfo: "LOT",
+                    xCoor: 72,
+                    yCoor: 68,
+                    longitude: -87.7725,
+                    latitude: 41.7677
                 }
 
             },
