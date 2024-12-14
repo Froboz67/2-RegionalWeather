@@ -4,14 +4,14 @@ export function createStore() {
     return _createStore({
         state: {
             weatherData: {
-                fairfield: {
+                hamilton: {
                     localSid: "CVGthr",
                     stationId: "KILN",
                     wfo: "ILN",
-                    xCoor: 34,
-                    yCoor: 50,
-                    longitude: -84.5427,
-                    latitude: 39.3314
+                    xCoor: 33,
+                    yCoor: 51,
+                    longitude: -84.5657,
+                    latitude: 39.3934
                 },
                 athens: {
                     localSid: "ATHO1thr",
@@ -55,11 +55,13 @@ export function createStore() {
         },
         mutations: {
             setCurrentCity(state, cityName) {
+                console.log("currentCity", state.currentCity = cityName);
                 state.currentCity = cityName;
             }
         },
         getters: {
             currentCityData(state) {
+                console.log("currentCityData", state.weatherData[state.currentCity]);
                 return state.weatherData[state.currentCity];
             }
         },

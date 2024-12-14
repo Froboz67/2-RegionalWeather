@@ -6,12 +6,12 @@
       <template #icon>
         <DocumentationIcon />
       </template>
-      <template #heading>Fairfield, Ohio</template>
+      <template #heading>Hamilton, Ohio</template>
       Seven Day Weather Forecast
-      <RouterLink :to="{ name: 'forecast' }" @click="setCity('fairfield')"
+      <RouterLink :to="{ name: 'forecast' }" @click="setCity('hamilton')"
         >Forecast</RouterLink
       >
-      for Fairfield, Ohio
+      for Hamilton, Ohio
     </WelcomeItem>
 
     <WelcomeItem>
@@ -66,6 +66,7 @@
 import { useStore } from "vuex";
 import WelcomeItem from "./WelcomeItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
+// import { reactive } from "vue";
 
 const store = useStore();
 const setCity = (cityName) => {

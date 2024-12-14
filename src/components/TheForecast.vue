@@ -8,7 +8,7 @@
         {{ this.city }}, {{ this.state }} | currently {{ this.temperature }}° F
         | heat index {{ this.heatIndex }}° F
       </p>
-      <p v-if="this.windChill < 32">
+      <p v-if="this.windChill !== '32'">
         {{ this.city }}, {{ this.state }} | currently {{ this.temperature }}° F
         | wind chill {{ this.windChill }}° F
       </p>
@@ -122,10 +122,13 @@ export default {
               (response.data.properties.heatIndex.value * 9) / 5 +
               32
             ).toFixed(0);
-            this.windChill = (
-              (response.data.properties.windChill.value * 9) / 5 +
-              32
-            ).toFixed(0);
+            this.windChill =
+              response.data.properties.windChill.value !== null
+                ? (
+                    (response.data.properties.windChill.value * 9) / 5 +
+                    32
+                  ).toFixed(0)
+                : "32";
             console.log(
               "raw wind chill value :",
               response.data.properties.windChill.value

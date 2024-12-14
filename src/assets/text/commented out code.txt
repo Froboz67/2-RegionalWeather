@@ -1,0 +1,30 @@
+commented out from last <Welcome> Item
+
+<!-- <form v-on:submit.prevent="getLocation">
+      <input type="text" v-model="form.localSid" placeholder="localSid" />
+      <input type="text" v-model="form.stationId" placeholder="stationId" />
+      <input type="text" v-model="form.wfo" placeholder="wfo" />
+      <input type="text" v-model="form.xCoor" placeholder="xCoor" />
+      <input type="text" v-model="form.yCoor" placeholder="yCoor" />
+      <input type="text" v-model="form.longitude" placeholder="longitude" />
+      <input type="text" v-model="form.latitude" placeholder="latitude" />
+      <button class="button-link" type="submit">Get City</button>
+    </form> -->
+
+commented out makes the form reactive and assigns it the the variable getLocation / form
+
+belongs in the script
+
+// const form = reactive({
+//   localSid: "",
+//   stationId: "",
+//   wfo: "",
+//   xCoor: "",
+//   yCoor: "",
+//   longitude: "",
+//   latitude: "",
+// });
+
+// const getLocation = () => {
+//   console.log("form data: ", form);
+// };
