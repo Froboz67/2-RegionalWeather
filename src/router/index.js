@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ForecastView from '../views/ForecastView.vue'
+import SearchView from '@/views/SearchView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -14,6 +15,12 @@ const router = createRouter({
       path: '/forecast',
       name: 'forecast',
       component: ForecastView,
+      props: true,
+    },
+    {
+      path: '/search',
+      name: 'search',
+      component: SearchView,
       props: true,
     },
     {

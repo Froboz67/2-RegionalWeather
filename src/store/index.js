@@ -6,7 +6,7 @@ export function createStore() {
             weatherData: {
                 hamilton: {
                     localSid: "CVGthr",
-                    stationId: "KILN",
+                    stationId: "KHAO",
                     wfo: "ILN",
                     xCoor: 33,
                     yCoor: 51,
@@ -57,6 +57,13 @@ export function createStore() {
             setCurrentCity(state, cityName) {
                 console.log("currentCity", state.currentCity = cityName);
                 state.currentCity = cityName;
+            },
+            updateCityData(state, payload) {
+                state.weatherData = {
+                    cityName: payload.cityName,
+                    weatherData: payload.cityData,
+                }
+                console.log("Updated data: ", payload.cityData, " ", payload.cityName);
             }
         },
         getters: {

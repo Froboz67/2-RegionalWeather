@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { format } from "date-fns";
+// import { format } from "date-fns";
 
 const http = axios.create({
     baseURL: import.meta.env.VITE_RCC_ACIS_URL,
@@ -9,15 +9,15 @@ const http = axios.create({
 })
 
 export default {
-    getRecordStats() {
-        let month = new Date().getMonth();
-        let date = new Date().getDate();
-        let year = new Date().getFullYear();
+    // getRecordStats() {
+    //     let month = new Date().getMonth();
+    //     let date = new Date().getDate();
+    //     let year = new Date().getFullYear();
 
-        let today = format(new Date(year, month, date), "yyyy-MM-dd").slice(5);
-        // console.log(today);
-        return today;
-    },
+    //     let today = format(new Date(year, month, date), "yyyy-MM-dd").slice(5);
+    //     console.log("recordService ", today);
+    //     return today;
+    // },
     getRecordHigh(localSid) {
         const requestBody = {
             "sid": localSid,

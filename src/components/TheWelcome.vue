@@ -59,6 +59,8 @@
       >
       for Bedford Park, Illinois
     </WelcomeItem>
+    <input type="text" />
+    <button :to="{ name: 'forecast' }">coor</button>
   </div>
 </template>
 
@@ -66,7 +68,6 @@
 import { useStore } from "vuex";
 import WelcomeItem from "./WelcomeItem.vue";
 import DocumentationIcon from "./icons/IconDocumentation.vue";
-// import { reactive } from "vue";
 
 const store = useStore();
 const setCity = (cityName) => {

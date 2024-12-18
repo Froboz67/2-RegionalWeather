@@ -57,9 +57,9 @@ export default {
       getDate() {
         return weatherService.getDate();
       },
-      getRecordStats() {
-        return rccasicService.getRecordStats();
-      },
+      // getRecordStats() {
+      //   return rccasicService.getRecordStats();
+      // },
       meta: [],
       name: "",
       recordHigh: "",
@@ -102,6 +102,7 @@ export default {
           )
           .then((response) => {
             this.periods = response.data.properties.periods;
+            console.log("period: ", this.periods);
           })
           .catch((error) => {
             console.log("error in getSevenDayForecast", error);
@@ -147,11 +148,14 @@ export default {
           .then((response) => {
             this.today = this.getDayOfYear();
             const day = this.today;
+            console.log("program thinks today is: ", day);
             this.recordHigh = response.smry[0][day];
             this.formattedRecordHigh = format(
               new Date(this.recordHigh[1]),
               "EEEE, MMMM dd, yyyy"
             );
+            console.log("record high: ", this.recordHigh);
+            console.log("formattedRecordHigh: ", this.formattedRecordHigh);
           })
           .catch((error) => {
             console.log("error connecting to rccasicService", error);
@@ -177,17 +181,28 @@ export default {
       }
     },
     getDayOfYear() {
+      // let isLeapYear = false;
       let date = new Date();
+      // let leap = date.getFullYear();
+      // if ((leap % 4 === 0 && leap % 100 !== 0) || leap % 400 === 0) {
+      //   isLeapYear = true;
+      //   console.log("leap year? ", isLeapYear);
+      // }
       // Create a Date object for January 1st of the current year
       const startOfYear = new Date(date.getFullYear(), 0, 1); // getFullYear(), <month #>, Day of the month
       // Calculate the difference in milliseconds between the two dates
       const diffInMillis = date - startOfYear;
       // Convert the difference from milliseconds to days
-      const dayOfYear = Math.floor(diffInMillis / (1000 * 60 * 60 * 24)) + 1; // Adding 1 since Jan 1st is day 1
+      let dayOfYear = Math.floor(diffInMillis / (1000 * 60 * 60 * 24)) + 1; // Adding 1 since Jan 1st is day 1
+      console.log("day of year", dayOfYear);
+      // if (isLeapYear && dayOfYear > 50) {
+      //   dayOfYear--;
+      // }
       return dayOfYear;
     },
   },
   created() {
+    console.log("city after search: ", this.$store.cityData);
     this.getCity();
     this.getSevenDayForecast();
     this.getCurrentTemperature();

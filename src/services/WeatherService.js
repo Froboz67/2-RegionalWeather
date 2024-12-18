@@ -21,6 +21,9 @@ export default {
     getCurrentWeather(stationId) {
         return http.get(`stations/${stationId}/observations/latest`)
     },
+    getStationId(wfo, xCoor, yCoor) {
+        return http.get(`/gridpoints/${wfo}/${xCoor},${yCoor}/stations`)
+    },
     getDate() {
 
         let day = new Date().getDay();
