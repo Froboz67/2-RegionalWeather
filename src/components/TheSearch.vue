@@ -68,11 +68,11 @@ export default {
               longitude: this.longitude,
               latitude: this.latitude,
             };
-            console.log("cityData: ", cityData);
-            this.$store.commit("updateCityData", {
-              cityName: this.cityName.toLowerCase(),
+            console.log("cityData: ", cityData, this.cityName);
+            this.$store.commit("setUpdateCityData", {
               cityData,
             });
+            this.$store.commit("setCurrentCity", this.cityName.toLowerCase());
             this.$router.push({ name: "forecast" });
           })
           .catch((error) => {

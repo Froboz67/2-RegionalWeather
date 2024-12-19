@@ -57,9 +57,6 @@ export default {
       getDate() {
         return weatherService.getDate();
       },
-      // getRecordStats() {
-      //   return rccasicService.getRecordStats();
-      // },
       meta: [],
       name: "",
       recordHigh: "",
@@ -70,12 +67,21 @@ export default {
   },
   computed: {
     currentCityData() {
+      console.log(
+        "this is the 'currentCityData': ",
+        this.$store.getters.currentCityData,
+        this.$store.state.weatherData
+      );
       return this.$store.getters.currentCityData;
     },
   },
   methods: {
     getCity() {
       if (this.currentCityData) {
+        console.log(
+          "current hard code currentCityData: ",
+          this.currentCityData
+        );
         weatherService
           .getCityName(
             this.currentCityData.latitude,
@@ -202,7 +208,7 @@ export default {
     },
   },
   created() {
-    console.log("city after search: ", this.$store.cityData);
+    console.log("city after search: ", this.$store.state.currentCity);
     this.getCity();
     this.getSevenDayForecast();
     this.getCurrentTemperature();
